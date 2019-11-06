@@ -8,8 +8,13 @@ module.exports = knex
 //   password: 'secret'
 // }).then(data => console.log(data))
 
-knex('users').insert({
-  name: 'João da Silva',
-  email: 'jsilva@fakemail.com',
-  password: 'secret'
-}).then(data => console.log(data))
+// knex('users').insert({
+//   name: 'João da Silva',
+//   email: 'jsilva@fakemail.com',
+//   password: 'secret'
+// }).then(data => console.log(data))
+
+knex('users')
+  .where({ email: 'jsilva@fakemail.com'})
+  .first('*')
+  .then(result => console.log(result))

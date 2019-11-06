@@ -8,6 +8,8 @@ module.exports = knex
 //   password: 'secret'
 // }).then(data => console.log(data))
 
-knex('users')
-  .select('*')
-  .then(result => console.log(result))
+knex('users').insert({
+  name: 'João da Silva',
+  email: 'jsilva@fakemail.com',
+  password: 'secret'
+}).then(data => console.log(data))
